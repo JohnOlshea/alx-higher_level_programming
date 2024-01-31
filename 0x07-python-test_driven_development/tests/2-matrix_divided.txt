@@ -1,0 +1,70 @@
+# Test cases for matrix_divided function
+
+# Test Case 1
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> div = 3
+>>> matrix_divided(matrix, div)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test Case 2
+>>> matrix = [
+...     [10, 20, 30],
+...     [40, 50, 60],
+...     [70, 80, 90]
+... ]
+>>> div = 10
+>>> matrix_divided(matrix, div)
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]]
+
+# Test Case 3
+>>> matrix = [
+...     [1.5, 2.5, 3.5],
+...     [4.5, 5.5, 6.5]
+... ]
+>>> div = 2.5
+>>> matrix_divided(matrix, div)
+[[0.6, 1.0, 1.4], [1.8, 2.2, 2.6]]
+
+# Test Case 4 - matrix with different row sizes
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6],
+...     [7, 8]
+... ]
+>>> div = 2
+Traceback (most recent call last):
+  ...
+TypeError: Each row of the matrix must have the same size
+
+# Test Case 5 - div equal to 0
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> div = 0
+Traceback (most recent call last):
+  ...
+ZeroDivisionError: division by zero
+
+# Test Case 6 - matrix with non-numeric elements
+>>> matrix = [
+...     [1, 2, 'a'],
+...     [4, 5, 6]
+... ]
+>>> div = 2
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test Case 7 - div is not a number
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> div = 'two'
+Traceback (most recent call last):
+  ...
+TypeError: div must be a number
